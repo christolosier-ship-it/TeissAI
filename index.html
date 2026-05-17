@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1d7f45" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TeissIA" />
+  <title>TeissIA</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section id="screen-home" class="screen active">
+      <div class="card">
+        <p class="chip">Aromatrix™ Intelligence Unit</p>
+        <h1>TeissIA</h1>
+        <h2>Analyse neurofruitée de compatibilité aromatique</h2>
+        <p class="lead">Répondez à 8 questions scientifiquement discutables afin de déterminer votre profil siropologique profond.</p>
+        <button id="start-btn" class="btn btn-primary">Lancer l’analyse</button>
+        <p class="muted">Technologie brevetée Aromatrix™</p>
+      </div>
+    </section>
+
+    <section id="screen-quiz" class="screen" aria-live="polite">
+      <div class="card">
+        <p id="question-count" class="chip">Question 1 / 8</p>
+        <h3 id="question-text"></h3>
+        <div id="answers" class="answers"></div>
+        <div class="progress-wrap">
+          <div class="progress-track">
+            <div id="quiz-progress" class="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-analysis" class="screen" aria-live="polite">
+      <div class="card">
+        <p class="chip">Pipeline neurofruité v4.8</p>
+        <h3>Analyse aromatique en cours…</h3>
+        <p id="analysis-subtext" class="lead compact">Calibration du palais…</p>
+        <div class="progress-track large">
+          <div id="analysis-progress" class="progress-bar"></div>
+        </div>
+        <p id="analysis-percent" class="percent">0%</p>
+        <div class="metrics">
+          <p><span>Indice IA :</span> <strong id="metric-ai">0.00</strong></p>
+          <p><span>Stabilité fruitée :</span> <strong id="metric-stability">0%</strong></p>
+          <p><span>Risque houblonné :</span> <strong id="metric-risk">faible</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen dark">
+      <div class="card dark-card">
+        <h3 class="result-main">Va plutôt prendre une bière, petite fiotte !</h3>
+        <p class="lead compact">Compatibilité Teisseire détectée : 2%</p>
+        <p class="lead compact">Profil aromatique : houblon contrarié</p>
+        <p class="lead compact">Recommandation officielle : abandonner le sirop et ouvrir une mousse.</p>
+        <div class="actions">
+          <button id="restart-btn" class="btn btn-secondary">Refaire le test</button>
+          <button id="share-btn" class="btn btn-primary">Partager mon résultat</button>
+        </div>
+        <canvas id="bubbles" width="320" height="160" aria-hidden="true"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
